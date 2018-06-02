@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Tables.</title>
+<style>
+table,td,tr,th
+{
+border-collapse:collapse;
+width:50%;
+}
+table,th,td 
+{
+border: 1px solid black;
+}
+th
+{
+text-align:left;
+vertical-align:bottom;
+height:30px;
+}
+td
+{
+vertical-align:bottom;
+}
+</style>
+</head>
+<body>
+<button type="button" onclick="loadXMLDoc()">View</button>
+<br><br>
+<table id="demo"></table>
+<script>
+function loadXMLDoc()
+{
+	var xmlhttp=new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function()
+	{
+	if(this.readyState==4 && this.status==200)
+	{
+	myFunction(this);
+	}
+	};
+	xmlhttp.open("GET","Table_u.xml",true);
+	xmlhttp.send();
+}
+function myFunction(xml)
+{
+	var i;
+	var xmlDoc=xml.responseXML;
+	var table="<tr><th>Name</th><th>Year</th><th>Inventor</th></tr>";
+	var x=xmlDoc.getElementsByTagName("tech");
+	for(i=0;i<x.length;i++)
+	{
+	table+="<tr><td>"+
+	x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue+
+	"</td><td>"+
+	x[i].getElementsByTagName("year")[0].childNodes[0].nodeValue+
+	"</td><td>"+
+	x[i].getElementsByTagName("inventor")[0].childNodes[0].nodeValue+
+	"</td></tr>";
+	}
+document.getElementById("demo").innerHTML=table;
+}
+</script>
+</body>
+</html>

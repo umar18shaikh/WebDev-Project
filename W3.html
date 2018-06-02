@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>Tutorials.</title>
+<script type="text/javascript">
+
+function validation()
+{
+	var u=document.getElementById("uid").value;
+	var p=document.getElementById("pwd").value;
+	var c=document.getElementById("cid").value;
+	var e=document.getElementById("eid").value;
+	var fn1=document.getElementById("fn").value;
+	var ln1=document.getElementById("ln").value;
+	var letters=/^[A-Za-z]+$/;
+	if(fn1.match(letters) && ln1.match(letters))
+		{
+			if(u=="" || p=="" || c=="" || e=="")
+			{
+				alert('Please fill all the details.');
+				return false;
+			}
+			else
+			{
+				alert('Registered successfully.');
+				return true;		
+			}
+		}
+	else
+		{
+			alert('Please enter valid name.');
+			return false;
+		}
+	
+}
+</script>
+</head>
+<style>
+body
+{
+	background-color:teal;
+}
+h1
+{
+color:green;
+}
+h4
+{
+text-align:right;
+}
+.topnav
+{
+overflow:hidden;
+background-color:black;
+}
+.topnav a
+{
+  float:left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+.topnav a:hover
+{
+background-color:white;
+color:black;
+}
+.topnav a.active 
+{
+  background-color:green;
+  color:black;
+}
+.sidenav
+{
+height:100%;
+width:160px;
+position:fixed;
+z-index:1;
+background-color:green;
+top:200px;
+}
+.sidenav a
+{
+padding: 6px 8px 6px 16px;
+color:white;
+display:block;
+}
+.sidenav a:hover
+{
+background-color:white;
+color:black;
+}
+</style>
+<body>
+<h1>w3schools.com</h1>
+<h4>
+THE WORLD'S LARGEST WEB DEVELOPER SITE.
+</h4>
+<div class="topnav">
+	<a class="active" href="" style="text-decoration:none">Home</a>
+	<a href="" style="text-decoration:none">News</a>
+	<a href="Contact.html" style="text-decoration:none">Contact</a>
+	<a href="About.html" style="text-decoration:none">About</a>
+</div>
+<div class="sidenav">
+<a href="" style="text-decoration:none">Learn HTML</a>
+<a href="" style="text-decoration:none">Learn CSS</a>
+<a href="" style="text-decoration:none">Learn XML</a>
+<a href="" style="text-decoration:none">Learn JavaScript</a>
+</div>
+<form action="Conn.jsp" onsubmit="validation()">
+<br>
+<br>
+<center>
+First Name:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="First Name" id="fn" name="firstname">
+<br>
+<br>
+Last Name:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="Lastt Name" id="ln" name="lastname">
+<br>
+<br>
+User Id:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="User ID" id="uid" name="username">
+<br>
+<br>
+Password:&nbsp;<input type="password" placeholder="Password" id="pwd" name="passwod">
+<br>
+<br>
+Contact No:&nbsp;<input type="phone" placeholder="Phone Number" id="cid">
+<br>
+<br>
+Gender:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="Gender">Male &nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="Gender">Female
+<br>
+<br>
+Designation:
+<select>
+<option>Student</option>
+</select>
+<br>
+<br>
+Email-id<input type="text" placeholder="Email-id" id="eid">
+<br>
+<br>
+<input type="submit" value="Sign Up">
+</center>
+</form>
+<center><a href="Tables.html">Learn more about web technologies.</a></center>
+</body>
+</html>

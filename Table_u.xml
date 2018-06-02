@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml id="techno">
+<techno>
+	<tech>
+		<name>Hypertext Markup Language</name>
+		<year>1991</year>
+		<inventor>Tim Berners-Lee</inventor>
+	</tech>
+	<tech>
+		<name>Cascading Style Sheets(CSS)</name>
+		<year>1994</year>
+		<inventor>Hakom Wium Lie</inventor>
+	</tech>
+</techno>
+</xml>
